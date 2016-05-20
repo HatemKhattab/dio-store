@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
- root 'page/home'
+  resources :products
+ root 'page#home'
+ 
  get 'page/contact'
  get 'page/about'
  get 'page/faqs'
-
+end
 
 
 
@@ -65,4 +67,4 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-end
+
