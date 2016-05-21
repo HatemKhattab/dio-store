@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'page/contact'
   get 'page/about'
   get 'page/faqs'
+  get 'cart/index'
 end
 
 
