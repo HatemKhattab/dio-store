@@ -5,7 +5,7 @@ gem 'rails', '4.2.4'
 gem 'sqlite3'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
-gem 'devise'
+gem 'devise', '~> 3.4.0'
 
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
