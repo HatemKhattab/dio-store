@@ -11,7 +11,9 @@ Rails.application.routes.draw do
   get 'page/contact'
   get 'page/about'
   get 'page/faqs'
-  get 'cart/index'
+  get '/cart' => 'cart#index'
+  get '/cart/clear' => 'cart#clearCart'
+  get '/cart/:id' => 'cart#add'
 end
 
 
