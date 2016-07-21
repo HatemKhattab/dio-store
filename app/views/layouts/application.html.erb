@@ -27,9 +27,10 @@
   </div>
 </nav>
 
-<div id="main_wrap">
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+<div id="main_wrap" class="container">
+  <%flash.each do |name, msg|%>
+  <%=content_tag :div, msg, class: "alert-danger"%>
+  <%end%>
 
   <%= yield %>
 </div>
@@ -37,5 +38,6 @@
 <footer>
 	<span> <%=Time.zone.now.year%> All rights are reserverd </span>
 </footer>
+
 </body>
 </html>
