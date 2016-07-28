@@ -11,8 +11,12 @@
  * file per style scope.
  *
  */
+// = require_self
+// = require 'products'
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
 
 *{
 	margin:0;
@@ -64,3 +68,4 @@ footer{
 	line-height: 40px;
 	text-align: center;
 }
+
