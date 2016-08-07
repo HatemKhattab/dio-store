@@ -1,0 +1,17 @@
+=form_for(@product) do |f|
+  -if @product.errors.any?
+    p 
+      =@product.errors.count
+      prevented this product from saving
+    ul 
+      -@product.errors.full_messages.each do |msg|
+        li =msg
+
+  .row
+  .col-md-2
+    =f.label :title
+
+  .col-md-8
+    =f.text_field :title
+
+  =f.submit
