@@ -29,7 +29,7 @@ class ProductsController < ApplicationController
 
   def update
       if @product.update(product_params)
-        edirect_to @product, notice: 'Product was successfully updated.' 
+        redirect_to @product, notice: 'Product was successfully updated.' 
       else
         render :edit 
       end
