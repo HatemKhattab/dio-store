@@ -1,17 +1,30 @@
 =form_for(@product) do |f|
   -if @product.errors.any?
     p 
-      =@product.errors.count
+      = @product.errors.count
       prevented this product from saving
     ul 
-      -@product.errors.full_messages.each do |msg|
+      - @product.errors.full_messages.each do |msg|
         li =msg
 
   .row
-  .col-md-2
-    =f.label :title
+    .col-md-2
+      = f.label :title
+    .col-md-8
+      = f.text_field :title
 
-  .col-md-8
-    =f.text_field :title
+  .row
+    .col-md-2
+      = f.label :description
+    .col-md-8
+      = f.text_field :description
+
+  .row
+    .col-md-2
+      = f.label :price
+    .col-md-8
+      = f.number_field :price, :step => "any"
+
+      
 
   =f.submit
