@@ -3,3 +3,4 @@
  
 
 Here i navigate more with ruby to build a shoping site.
+You can visit the site on http://dio-store.herokuapp.com/
