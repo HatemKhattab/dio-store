@@ -9,6 +9,7 @@ gem 'puma'
 gem 'jquery-rails'
 gem 'slim'
 gem 'bootstrap-sass'
+gem 'paperclip'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
