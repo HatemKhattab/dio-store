@@ -25,6 +25,12 @@
     .col-md-8
       = f.number_field :price, :step => 0.01
 
-      
+  .row
+    .col-md-2
+      = f.label :images
+    .col-md-8
+      = f.file_field :images
+
+     
 
   =f.submit
