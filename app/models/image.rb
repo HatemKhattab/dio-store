@@ -1,8 +1,9 @@
 class Image < ActiveRecord::Base
 	belongs_to :product
 
-	has_attached_file :picture, styles: {medium: "300x300", thumb: "100x100"},
-	default_url: "/images/:style"
+	has_attached_file :picture, styles: {thumb: "100x100"},
+	  url: "/images/:style/:filename",
+	  path: ":rails_root/public/images/:style/:filename"
 
 	validates_attachment_content_type :picture, content_type: /\Aimage\/.*\Z/
 end

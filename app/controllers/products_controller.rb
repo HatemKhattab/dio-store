@@ -17,10 +17,15 @@ class ProductsController < ApplicationController
   def edit
   end
 
- 
   def create
     @product = Product.new(product_params)
       if @product.save
+        if params[:files]
+          params[:files].each {|pic|
+            @product.images.create(picture: pic)
+          }
+        end
+
         redirect_to @product, notice: 'Product was successfully created.' 
       else
         render :new
@@ -29,6 +34,11 @@ class ProductsController < ApplicationController
 
   def update
       if @product.update(product_params)
+        if params[:files]
+          params[:files].each {|pic|
+            @product.images.create(picture: pic)
+          }
+        end
         redirect_to @product, notice: 'Product was successfully updated.' 
       else
         render :edit 
@@ -49,7 +59,7 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:title, :description, :image_url, :price, :category, :subcategory)
+      params.require(:product).permit(:title, :description, :price, :images)
     end
 end
 
