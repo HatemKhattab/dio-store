@@ -1,0 +1,34 @@
+<h1>gallery</h1>
+
+<div id="blueimp-gallery" class="blueimp-gallery">
+  <div class="slides"></div>
+  <h3 class="title"></h3>
+  <a class="prev">‹</a>
+  <a class="next">›</a>
+  <a class="close">×</a>
+  <a class="play-pause"></a>
+  <ol class="indicator"></ol>
+</div>
+
+<div id="links">
+  <a href="https://farm9.static.flickr.com/8448/28616634884_b5f3baccb9_b.jpg" title="Photo 1">
+    <img src="https://farm9.static.flickr.com/8448/28616634884_b5f3baccb9_s.jpg" alt="Photo 1">
+  </a>
+  <a href="https://farm8.static.flickr.com/7783/29203937966_983ee0df13_b.jpg" title="Photo 2">
+    <img src="https://farm8.static.flickr.com/7783/29203937966_983ee0df13_s.jpg" alt="Photo 2">
+  </a>
+  <a href="https://farm9.static.flickr.com/8193/28621214464_8d8f7a1eef_b.jpg" title="Photo 3">
+    <img src="https://farm9.static.flickr.com/8193/28621214464_8d8f7a1eef_s.jpg" alt="Photo 3">
+  </a>
+</div>
+
+<script>
+document.getElementById('links').onclick = function (event) {
+  event = event || window.event;
+  var target = event.target || event.srcElement,
+    link = target.src ? target.parentNode : target,
+    options = {index: link, event: event},
+    links = this.getElementsByTagName('a');
+  blueimp.Gallery(links, options);
+};
+</script>
