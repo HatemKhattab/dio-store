@@ -11,6 +11,7 @@ gem 'slim'
 gem 'bootstrap-sass'
 gem 'paperclip'
 gem 'figaro'
+gem 'blueimp-gallery'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
