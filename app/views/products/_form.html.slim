@@ -27,7 +27,25 @@
 
   .row
     .col-md-2
-      = f.label :images
+      b image 1
+    .col-md-8
+      = file_field_tag "files[]",type: :file, multiple: true
+
+  .row
+    .col-md-2
+      b image 2
+    .col-md-8
+      = file_field_tag "files[]",type: :file, multiple: true
+
+  .row
+    .col-md-2
+      b image 3
+    .col-md-8
+      = file_field_tag "files[]",type: :file, multiple: true
+
+  .row
+    .col-md-2
+      b image 4
     .col-md-8
       = file_field_tag "files[]",type: :file, multiple: true
 
