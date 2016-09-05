@@ -1,15 +1,39 @@
 
 
-
 h4 =@product.title
 h4 =@product.description
 h4 =@product.price
 
--if @product.images.present?
-  -@product.images.each do |img|
-    =image_tag img.picture.url 
--else
-  p No image available
+div id="links"
+  -if @product.images.present?
+    -@product.images.each do |img|
+      a href="#{img.picture.url}"
+        =image_tag img.picture.url(:thumb) 
+  -else
+    p No image available
 
+hr
 =link_to 'Edit', edit_product_path(@product)
 =link_to 'Back', products_path
+
+
+
+
+div id="blueimp-gallery" class="blueimp-gallery"
+  div class="slides"
+  h3 class="title"
+  a class="prev" ‹
+  a class="next" ›
+  a class="close" ×
+  a class="play-pause"
+  ol class="indicator"
+
+javascript:
+  document.getElementById('links').onclick = function (event) {
+  event = event || window.event;
+  var target = event.target || event.srcElement,
+    link = target.src ? target.parentNode : target,
+    options = {index: link, event: event},
+    links = this.getElementsByTagName('a');
+  blueimp.Gallery(links, options);
+  };
