@@ -18,7 +18,7 @@ class CartController < ApplicationController
 
 private
 
-  def cart  
+  def cart
      session[:cart] ||= {}
   end
 

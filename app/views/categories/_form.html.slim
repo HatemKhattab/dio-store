@@ -1,0 +1,24 @@
+=form_for @category do |f|
+	-if @category.errors.any?
+	  p
+	    = @category.errors.count
+	    prevented category saving
+	  ul 
+	    - @category.errors.full_messages.each do |msg|
+	      li =msg
+
+    .row
+      .col-md-2
+        = f.label :name
+      .col-md-8
+        = f.text_field :name 
+    br
+    .row
+      .col-md-2
+        = f.label :description
+      .col-md-8
+        = f.text_area :description
+
+
+
+    = f.submit

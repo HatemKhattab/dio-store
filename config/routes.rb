@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   end
   
   resources :products
- 
+  resources :categories
   get 'page/contact'
   get 'page/about'
   get 'page/faqs'

@@ -1,0 +1,8 @@
+	-@categories.each do |cat|
+	  .row
+			.col-md-2
+			  p = cat.name
+			.col-md-1
+			  =link_to 'Edit', edit_category_path(cat)
+			.col-md-1
+			  =link_to 'Delete', cat, method: :delete

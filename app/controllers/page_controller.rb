@@ -6,10 +6,10 @@ class PageController < ApplicationController
   def about
   end
 
-  def faqs 
+  def faqs
   end
 
-  def contact
+  def contact	
   end
 
 end
