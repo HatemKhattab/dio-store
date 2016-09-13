@@ -27,6 +27,12 @@
 
   .row
     .col-md-2
+      b Category
+    .col-md-8
+      = collection_select(:product, :category_id, Category.all, :id, :name,  {:prompt => 'Please select category'} )
+
+  .row
+    .col-md-2
       b image 1
     .col-md-8
       = file_field_tag "files[]",type: :file, multiple: true

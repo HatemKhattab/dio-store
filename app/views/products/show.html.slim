@@ -1,6 +1,7 @@
 .row
 
   .col-md-6
+  
     =image_tag @product.images.first.picture.url(:medium)
     div id="links"
       -if @product.images.present?
