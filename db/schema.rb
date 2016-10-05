@@ -36,6 +36,8 @@ ActiveRecord::Schema.define(version: 20160908082336) do
     t.string   "title"
     t.text     "description"
     t.decimal  "price",       precision: 8, scale: 2
+    t.string   "category"
+    t.string   "subcategory"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.integer  "category_id"

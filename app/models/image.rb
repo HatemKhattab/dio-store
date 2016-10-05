@@ -1,5 +1,5 @@
 class Image < ActiveRecord::Base
-	belongs_to :product
+	belongs_to :product 
 
 	has_attached_file :picture, styles: {thumb: "100x100", medium: "300x300"},
 	  url: "/images/:id/:style/:filename",

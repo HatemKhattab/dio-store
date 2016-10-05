@@ -26,6 +26,7 @@ group :development, :test do
   gem 'byebug'
   gem 'sqlite3'
   gem 'rspec-rails'
+  gem 'factory_girl_rails'
 end
 
 group :development do
@@ -43,7 +44,6 @@ group :production do
 end
 
 group :test do
-  gem 'factory_girl_rails'
   gem 'capybara'
   gem 'guard-rspec'
 end
