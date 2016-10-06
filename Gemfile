@@ -12,6 +12,7 @@ gem 'bootstrap-sass'
 gem 'paperclip'
 gem 'figaro'
 gem 'blueimp-gallery'
+gem 'ffaker'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
@@ -27,6 +28,7 @@ group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
+  gem 'fuubar'
 end
 
 group :development do
