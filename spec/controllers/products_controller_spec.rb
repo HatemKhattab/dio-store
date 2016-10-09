@@ -1,6 +1,4 @@
-
-require 'rails_helper'
-require 'spec_heper'
+require 'rails_helper' 
 
 RSpec.describe ProductsController, type: :controller  do
 
@@ -15,7 +13,6 @@ RSpec.describe ProductsController, type: :controller  do
       get :index
       expect(response).to render_template("index")
     end
- 
     # it 'shows all products' do
     # 	let(:tv) { Factory.Girl.create :tv }
     # end

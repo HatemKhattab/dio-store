@@ -8,14 +8,15 @@
 #     t.datetime "updated_at",                          null: false
 #     t.integer  "category_id"
 #   end
-require 'spec_helper'
-# Factory.define do
+#require 'spec_helper'
+require 'rails_helper'
+FactoryGirl.define do
 
-# 	factory :sony do
-# 		title  { "sony tv" }
-#   	description  { FFaker::Time }
-# 		price { 20.00 }
-# 		category { "clothes" }
-# 	end
+	factory :sony do
+		title  { "sony tv" }
+  	description  { FFaker::Time }
+		price { 20.00 }
+		category { "clothes" }
+	end
 
-# end
+end
