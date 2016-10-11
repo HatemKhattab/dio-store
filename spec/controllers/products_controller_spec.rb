@@ -1,4 +1,4 @@
-require 'rails_helper' 
+require 'rails_helper'
 
 RSpec.describe ProductsController, type: :controller  do
 
@@ -13,9 +13,11 @@ RSpec.describe ProductsController, type: :controller  do
       get :index
       expect(response).to render_template("index")
     end
-    # it 'shows all products' do
-    # 	let(:tv) { Factory.Girl.create :tv }
-    # end
+
+    it 'should success' do
+      attrs = attributes_for(:sony)
+      expect(attrs.length).to eq(2)
+    end
 	end
- 
-end
+
+end 
