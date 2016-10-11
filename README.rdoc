@@ -1,13 +1,13 @@
-== README s
+== README 
+
+Here i go deeply with ruby on rails  to build a shoping site.
+
+You can visit the site on http://dio-store.herokuapp.com
 
 To use the project
 
--fork from Githup
+- fork from Githup
 - bunble
 - rake db:migrate
 
-= Editorconfig to stander coding locate on .editorconfig
  
-
-Here i navigate more with ruby to build a shoping site.
-You can visit the site on http://dio-store.herokuapp.com/
