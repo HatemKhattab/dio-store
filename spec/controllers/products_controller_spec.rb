@@ -14,9 +14,10 @@ RSpec.describe ProductsController, type: :controller  do
       expect(response).to render_template("index")
     end
 
-    it 'should success' do
-      attrs = attributes_for(:sony)
-      expect(attrs.length).to eq(2)
+    it 'display all the products' do
+    	create(:iphone7)
+    	create(:tshirt)
+    	expect(Product.count).to eq(2)
     end
 	end
 

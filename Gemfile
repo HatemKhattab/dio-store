@@ -29,6 +29,8 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'fuubar'
+  #gem 'pry'
+  #gem 'rb-readline'
 end
 
 group :development do

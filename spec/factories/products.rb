@@ -12,9 +12,15 @@ require 'rails_helper'
 
 FactoryGirl.define do
 
-	factory :sony, class: :Product do
-		title "sony tv"
-		price 20.00
+	factory :iphone7, class: :Product do
+		title "iphone 7"
+		price 1200.00
+		association :category, factory: :electric
+	end
+
+	factory :tshirt, class: :Product do
+		title "addidas"
+		price 49.99
 	end
 
 end
