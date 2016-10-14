@@ -21,4 +21,21 @@ RSpec.describe ProductsController, type: :controller  do
     end
 	end
 
-end 
+	describe 'Get #show' do
+
+		before {
+			phone = create(:iphone7)
+			get :show, id: phone.id
+		}
+
+		it 'success' do
+			expect(response).to be_success
+	  end
+
+	  it 'redirect to the right product' do
+	  	expect(response).to render_template :show
+	  end
+
+	end
+
+end
