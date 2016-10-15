@@ -8,7 +8,6 @@
 #     t.datetime "updated_at",                          null: false
 #     t.integer  "category_id"
 #   end
-require 'rails_helper'
 
 FactoryGirl.define do
 

@@ -35,7 +35,9 @@ RSpec.describe ProductsController, type: :controller  do
 	  it 'redirect to the right product' do
 	  	expect(response).to render_template :show
 	  end
-
 	end
+
+	describe ''do
+  end
 
 end

@@ -4,7 +4,6 @@
   #   t.datetime "created_at"
   #   t.datetime "updated_at"
   # end
-  require 'rails_helper'
 
 FactoryGirl.define do
 
