@@ -13,7 +13,6 @@ class ProductsController < ApplicationController
     @product = Product.new
   end
 
-  
   def edit
   end
 

@@ -3,8 +3,7 @@ require 'rails_helper'
 RSpec.describe ProductsController, type: :controller  do
 
 	describe 'Get #index' do
-
-		it 'response successfully' do
+    it 'response successfully' do
 	    get :index
 	    expect(response).to be_success
     end
@@ -23,10 +22,10 @@ RSpec.describe ProductsController, type: :controller  do
 
 	describe 'Get #show' do
 
-		before {
+		before do
 			phone = create(:iphone7)
 			get :show, id: phone.id
-		}
+	  end
 
 		it 'success' do
 			expect(response).to be_success
@@ -37,7 +36,24 @@ RSpec.describe ProductsController, type: :controller  do
 	  end
 	end
 
-	describe ''do
+	describe 'Post #create' do
+
+		before {
+			@product_count = Product.count
+			iphone_params = attributes_for(:iphone7)
+		  post :create, product: iphone_params
+	  }
+
+		it 'increase Product by 1' do
+		  expect(Product.count).to eq(@product_count + 1)
+		end
   end
 
-end
+end 
+
+
+
+# it "creates article" do 
+#   article_params = FactoryGirl.attributes_for(:article)
+#   expect { post :create, :article => article_params }.to change(Article, :count).by(1) 
+# end
