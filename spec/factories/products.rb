@@ -22,4 +22,8 @@ FactoryGirl.define do
 		price 49.99
 	end
 
+	factory :samsung, class: :Product do
+		description "any text"
+	end
+
 end

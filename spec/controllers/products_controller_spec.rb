@@ -38,22 +38,39 @@ RSpec.describe ProductsController, type: :controller  do
 
 	describe 'Post #create' do
 
-		before {
-			@product_count = Product.count
-			iphone_params = attributes_for(:iphone7)
-		  post :create, product: iphone_params
-	  }
+		context "With valid attributes" do
+			before {
+				@product_count = Product.count
+				iphone_params = attributes_for(:iphone7)
+			  post :create, product: iphone_params
+		  }
 
-		it 'increase Product by 1' do
-		  expect(Product.count).to eq(@product_count + 1)
-		end
+			it 'increase Product by 1' do
+			  expect(Product.count).to eq(@product_count + 1)
+			end
+
+			it 'redirect to show ' do
+				expect(response).to redirect_to Product.last
+			end
+
+			it'render flash message "Product was successfully created"' do
+				expect(flash[:notice]).to include "Product was successfully created"
+			end
+	  end
+
+	  context "With invalid attributes" do
+      product_count = Product.count
+	  	subject {post :create, product: attributes_for(:samsung)}
+
+	  	it 'dont add the product' do 
+	  		expect(Product.count).to eq(product_count) 
+	  	end
+
+	  	it 'render new again' do
+	  		expect(subject).to render_template :new
+	  	end
+	  end
   end
 
 end 
 
-
-
-# it "creates article" do 
-#   article_params = FactoryGirl.attributes_for(:article)
-#   expect { post :create, :article => article_params }.to change(Article, :count).by(1) 
-# end
