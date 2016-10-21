@@ -7,14 +7,18 @@
 
 FactoryGirl.define do
 
-	factory :electric, class: :Category, aliases: [:elecs] do
+	factory :electronics, class: :Category, aliases: [:elecs] do
 		name "electronics"
 		description "any text"
 	end
 
-	factory :cloth, class: :Category do
+	factory :clothes, class: :Category do
 		name "clothes"
 		description "any text"
+	end
+
+	factory :mobler, class :Categoty do
+		
 	end
 
 end
