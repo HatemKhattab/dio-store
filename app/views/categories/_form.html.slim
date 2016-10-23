@@ -2,7 +2,7 @@
 	-if @category.errors.any?
 	  p
 	    = @category.errors.count
-	    prevented category saving
+
 	  ul 
 	    - @category.errors.full_messages.each do |msg|
 	      li =msg

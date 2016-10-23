@@ -17,8 +17,8 @@ FactoryGirl.define do
 		description "any text"
 	end
 
-	factory :mobler, class :Categoty do
-		
+	factory :mobler, class: :Category do
+		description "any text"
 	end
 
 end
