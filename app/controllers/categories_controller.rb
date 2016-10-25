@@ -6,7 +6,8 @@ class CategoriesController < ApplicationController
 	end
   
   def new
-  	@category = Category.new  end
+  	@category = Category.new  
+  end
 
   def edit
   end
@@ -41,7 +42,5 @@ class CategoriesController < ApplicationController
     def category_params
     	params.require(:category).permit(:name, :description)
     end
-
-
 
 end
