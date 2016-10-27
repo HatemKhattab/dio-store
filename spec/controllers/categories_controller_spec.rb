@@ -38,9 +38,48 @@ RSpec.describe CategoriesController, type: :controller do
 		end
 
 		describe "PUT #update" do
+
+			let(:att_update) do
+        {name: "new name", description: "new description"}
+			end
+
+			let(:category){
+				create(:clothes)
+			}
+
+			before {
+				@prev_updated_at = category.updated_at
+				put :update, id: category.id, category: att_update
+		 	  category.reload
+			}
+
+			it "Update the right attributes" do
+				expect(category.name).to eq(att_update[:name])
+				expect(category.description).to eq(att_update[:description])
+			end
+
+			it "Redirect tocategory show" do
+				expect(response).to redirect_to category
+			end
+
+			it "Has different update time" do
+				expect(category.updated_at).to be > @prev_updated_at
+			end
 		end
+
 		describe "DELETE #destroy" do
-		end 
+		end
   end
 
 end
+
+
+# describe "PUT 'update/:id'" do
+#   it "allows an article to be updated" do
+#     prev_updated_at = @article.updated_at
+#     @attr = { :title => "new title", :content => "new content" }
+#     put :update, :id => @article.id, :article => @attr
+#     @article.reload
+#     @article.updated_at.should != prev_updated_at 
+#   end
+# end
