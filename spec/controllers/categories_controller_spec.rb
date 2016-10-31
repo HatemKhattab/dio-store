@@ -68,18 +68,28 @@ RSpec.describe CategoriesController, type: :controller do
 		end
 
 		describe "DELETE #destroy" do
+
+			before{
+				category = create(:clothes)
+				@category_count = Category.count
+				delete :destroy, {id: category.id}
+			}
+
+			it "Success" do
+				expect(Category.count).to eq(@category_count - 1) 
+			end
+
+			it "Redirect to root path " do
+				expect(response).to redirect_to :root
+			end
+
+			it "Dispaly a message 'Deleting category successed'" do
+				expect(flash[:notice]).to include "Deleting category successed"
+			end
+
 		end
   end
 
 end
 
 
-# describe "PUT 'update/:id'" do
-#   it "allows an article to be updated" do
-#     prev_updated_at = @article.updated_at
-#     @attr = { :title => "new title", :content => "new content" }
-#     put :update, :id => @article.id, :article => @attr
-#     @article.reload
-#     @article.updated_at.should != prev_updated_at 
-#   end
-# end
