@@ -27,6 +27,18 @@
 
   .row
     .col-md-2
+      = f.label :articlenr
+    .col-md-8
+      = f.text_field :articlenr
+
+  .row
+    .col-md-2
+      = f.label :quantity
+    .col-md-8
+      = f.number_field :quantity
+
+  .row
+    .col-md-2
       b Category
     .col-md-8
       = collection_select(:product, :category_id, Category.all, :id, :name,  {:prompt => 'Please select category'} )

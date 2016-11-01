@@ -14,12 +14,15 @@ FactoryGirl.define do
 	factory :iphone7, class: :Product do
 		title "iphone 7"
 		price 1200.00
-		association :category, factory: :electric
+		quantity 12
+		articlenr "XZ4242"
+		association :category, factory: :electronics
 	end
 
 	factory :tshirt, class: :Product do
 		title "addidas"
 		price 49.99
+		quantity 4
 	end
 
 	factory :samsung, class: :Product do
