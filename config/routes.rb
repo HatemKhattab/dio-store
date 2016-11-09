@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   
   resources :products
   resources :categories
+  resource :images, only: [:destroy]
   get 'page/contact'
   get 'page/about'
   get 'page/faqs'
@@ -16,9 +17,6 @@ Rails.application.routes.draw do
   get '/cart/clear' => 'cart#clearCart'
   get '/cart/:id' => 'cart#add'
 end
-
-
-
 
 
 

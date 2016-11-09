@@ -13,58 +13,77 @@
     .col-md-8
       = f.text_field :title
 
+  br
   .row
     .col-md-2
       = f.label :description
     .col-md-8
       = f.text_field :description
-
+  br
   .row
     .col-md-2
       = f.label :price
     .col-md-8
       = f.number_field :price, :step => 0.01
 
+  br
   .row
     .col-md-2
       = f.label :articlenr
     .col-md-8
       = f.text_field :articlenr
 
+  br
   .row
     .col-md-2
       = f.label :quantity
     .col-md-8
       = f.number_field :quantity
 
+  br
   .row
     .col-md-2
       b Category
     .col-md-8
       = collection_select(:product, :category_id, Category.all, :id, :name,  {:prompt => 'Please select category'} )
 
+  br
   .row
     .col-md-2
       b image 1
     .col-md-8
       = file_field_tag "files[]",type: :file, multiple: true
-
+  br
   .row
     .col-md-2
       b image 2
     .col-md-8
       = file_field_tag "files[]",type: :file, multiple: true
-
+  br
   .row
     .col-md-2
       b image 3
     .col-md-8
       = file_field_tag "files[]",type: :file, multiple: true
 
+  br
   .row
     .col-md-2
       b image 4
     .col-md-8
       = file_field_tag "files[]",type: :file, multiple: true
 
+  br
   =f.submit
+
+  hr
+  h4 Edit images
+  -if @product.images.present?
+    ol
+      -@product.images.each do |img|
+        li 
+          =image_tag img.picture.url(:thumb)
+          =link_to "Delete", {controller: 'images', action: 'destroy', id: img.id}, data:{confirm: "Are you sure?"}, method: :delete
+
+  -else
+    h3 no images yet
