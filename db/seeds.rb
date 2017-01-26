@@ -7,12 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 #-------------------------------------------------------------------------
 
-# create_table "categories", force: :cascade do |t|
-#     t.string   "name"
-#     t.text     "description"
-#     t.datetime "created_at"
-#     t.datetime "updated_at"
-#   end
+
 
 #   create_table "images", force: :cascade do |t|
 #     t.datetime "created_at",           null: false
@@ -39,7 +34,6 @@
 #     t.string   "articlenr"
 #   end
 
-# Fill the products with examples
 
 # Image.create({
 #   :id => 52, 
@@ -66,7 +60,7 @@ product_list.each do |tit, pri, quan|
   Product.create(title: tit, price: pri, quantity: quan )
 end
 
-
+Image.create({picture: File.new("#{Rails.root}/images/iphone.jpg"), product_id: Product.first.id})
 
 
 
